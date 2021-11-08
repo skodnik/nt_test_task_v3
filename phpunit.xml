@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="./tests/bootstrap.php"
+         colors="true"
+         testdox="true"
+         verbose="true"
+         stopOnFailure="false"
+>
+    <php>
+        <env name="DB_DRIVER" value="pdo_sqlite" />
+        <env name="DB_PATH" value="./tests/database_test.sqlite" />
+        <env name="DB_USER" value="" />
+        <env name="DB_PASSWORD" value="" />
+        <env name="DB_NAME" value="" />
+    </php>
+    <testsuites>
+        <testsuite name="Unit">
+            <directory suffix="Test.php">./tests/Unit</directory>
+        </testsuite>
+        <testsuite name="Feature">
+            <directory suffix="Test.php">./tests/Feature</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
